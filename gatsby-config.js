@@ -5,14 +5,21 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-postcss`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        postCssPlugins: [require("tailwindcss")("./tailwind.config.js")],
       },
     },
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -31,4 +38,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

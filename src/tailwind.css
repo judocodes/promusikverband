@@ -1,0 +1,47 @@
+:root {
+  --color-primary: #2563eb;
+  --color-secondary: #38bdf8;
+  --color-tertiary: #e11d48;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .section-heading {
+    @apply font-playfair text-3xl leading-normal text-gray-800;
+  }
+
+  .section-subheading {
+    @apply max-w-2xl mx-auto leading-normal mt-2 text-xl tracking-tight font-light;
+  }
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./fonts/PlayfairDisplay.ttf");
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans-Bold.ttf") format("true-type") font-weight-bold,
+    url("./fonts/OpenSans-BoldItalic.ttf") format("true-type") font-italic
+      font-weight-bold,
+    url("./fonts/OpenSans-SemiBold.ttf") format("true-type")
+      font-weight-semibold,
+    url("./fonts/OpenSans-SemiBoldItalic.ttf") format("true-type") font-italic
+      font-weight-semibold,
+    url("./fonts/OpenSans-Regular.ttf") format("true-type") font-weight-regular,
+    url("./fonts/OpenSans-Italic.ttf") format("true-type") font-italic
+      font-weight-regular,
+    url("./fonts/OpenSans-Light.ttf") format("true-type") font-weight-light,
+    url("./fonts/OpenSans-LightItalic.ttf") format("true-type") font-italic
+      font-weight-light;
+}
+
+.gradient {
+  background-color: linear-gradient(
+    var(--color-primary),
+    var(--color-secondary)
+  );
+}
